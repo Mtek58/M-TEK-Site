@@ -21,7 +21,32 @@
         .banner { width: 100%; max-height: 500px; object-fit: cover; margin-bottom: 20px; border-radius: 8px; }
         iframe { width: 100%; height: 300px; border: none; margin-top: 20px; border-radius: 8px; }
         form input, form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; }
-    </style>
+    
+#messenger-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #0084ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+    z-index: 1000;
+}
+#messenger-badge img {
+    width: 30px;
+    height: 30px;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+</style>
 </head>
 <body>
 
@@ -93,9 +118,9 @@
 </section>
 
 <section id="formulaire">
-    <h2>Nous Écrire</h2>
-    <p>Contactez-nous directement via notre page Facebook pour toute demande d'information ou de devis rapide.</p>
-    <a href="https://m.facebook.com/lerepaire58/" class="button-call" target="_blank">Nous contacter sur Facebook</a>
+    <h2>Retrouvez-nous sur Facebook</h2>
+    <p>Pour nous poser une question, demander un devis ou suivre nos actualités, rendez-vous directement sur notre page Facebook :</p>
+    <a href="https://m.facebook.com/lerepaire58/" class="button-call" target="_blank">Accéder à notre page Facebook</a>
 </section>
 
 <section id="cgu">
@@ -122,5 +147,9 @@
     &copy; 2025 M-Tek ® France - Tous droits réservés
 </footer>
 
+
+<a href="https://m.me/lerepaire58" target="_blank" id="messenger-badge">
+    <img src="messenger-icon.png" alt="Contact Messenger" />
+</a>
 </body>
 </html>
