@@ -12,15 +12,24 @@
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
         header { background-color: #004080; color: white; padding: 20px; text-align: center; }
         nav { background: #003366; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
         nav a:hover { color: #28a745; }
         section { padding: 20px; background: white; margin: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         footer { background-color: #004080; color: white; text-align: center; padding: 10px; margin-top: 20px; }
-        .button-call { background: #28a745; color: white; padding: 15px 25px; text-decoration: none; font-size: 18px; border-radius: 8px; display: inline-block; margin: 10px 0; transition: background 0.3s ease; }
+        .button-call { background: #28a745; color: white; padding: 15px 25px; text-decoration: none; font-size: 18px; border-radius: 8px; display: inline-block; margin: 10px 0; transition: background 0.3s ease; border: none; cursor: pointer; }
         .button-call:hover { background: #218838; }
         .banner { width: 100%; max-height: 500px; object-fit: cover; margin-bottom: 20px; border-radius: 8px; }
         iframe { width: 100%; height: 300px; border: none; margin-top: 20px; border-radius: 8px; }
-    </style>
+        form input, form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; }
+    
+@media (max-width: 768px) {
+    header h1 { font-size: 24px; }
+    header p { font-size: 16px; }
+    nav a { display: block; margin: 10px 0; }
+    .button-call { width: 100%; }
+    form input, form textarea { font-size: 16px; }
+}
+</style>
 </head>
 <body>
 
@@ -33,6 +42,9 @@
     <a href="#services">Services</a>
     <a href="#deblocage">Déblocage</a>
     <a href="#contact">Contact</a>
+    <a href="#formulaire">Nous Écrire</a>
+    <a href="#cgu">CGU</a>
+    <a href="#mentions">Mentions légales</a>
 </nav>
 
 <img src="banner.png" alt="M-Tek France réparation téléphone, déblocage iCloud, changement écran, réparation carte mère" class="banner">
@@ -86,6 +98,36 @@
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
+</section>
+
+<section id="formulaire">
+    <h2>Nous Écrire</h2>
+    <form action="https://formsubmit.co/lerepaire58@gmail.com" method="POST">
+        <input type="text" name="Nom" placeholder="Votre nom" required><br>
+        <input type="tel" name="Téléphone" placeholder="Votre téléphone" required><br>
+        <textarea name="Message" placeholder="Votre message" required></textarea><br>
+        <button type="submit" class="button-call">Envoyer</button>
+    </form>
+</section>
+
+<section id="cgu">
+    <h2>Conditions Générales d'Utilisation (CGU)</h2>
+    <p>
+        L'utilisation de ce site implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites. 
+        Ces conditions peuvent être modifiées à tout moment, les utilisateurs du site sont donc invités à les consulter régulièrement.
+    </p>
+    <p>
+        Le site est mis à jour régulièrement. M-Tek ® France s'efforce de fournir sur son site des informations aussi précises que possible.
+    </p>
+</section>
+
+<section id="mentions">
+    <h2>Mentions Légales</h2>
+    <p><strong>Propriétaire du site :</strong> M-Tek ® France<br>
+    Adresse : 68 rue du Maréchal Leclerc, 58200 Cosne-Cours-sur-Loire<br>
+    Téléphone : 07 43 35 68 24<br>
+    Email : lerepaire58@gmail.com<br>
+    Hébergeur : GitHub Pages</p>
 </section>
 
 <footer>
