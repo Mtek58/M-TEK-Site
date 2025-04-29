@@ -19,7 +19,7 @@
 - **Adresse** : 68 Rue du Maréchal Leclerc, 58200 Cosne-Cours-sur-Loire
 - **Téléphone** : [07 43 35 68 24](tel:+33743356824)
 - **Facebook** : [Le Repaire 58](https://m.facebook.com/lerepaire58/)
-- **Site Web** : [https://mtek58.github.io/M-TEK-Site/](https://mtek58.github.io/M-TEK-Site/)
+- **Site Web** : [https://mtekcosne.fr.](https://mtekcosne.fr.)
 
 ---
 
