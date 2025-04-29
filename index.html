@@ -23,7 +23,10 @@ nav.scrolled {
     background: rgba(0, 51, 102, 0.9); 
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-        nav a { 
+        nav a {
+    display: inline-block;
+    margin: 0 15px;
+ 
     color: white; 
     margin: 0 10px; 
     text-decoration: none; 
@@ -47,7 +50,10 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
 }
-        nav a:hover { color: #28a745; }
+        nav a:hover {
+    color: #28a745;
+    text-shadow: 0 0 5px rgba(40, 167, 69, 0.7);
+}
         section { padding: 20px; background: white; margin: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         footer { background-color: #004080; color: white; text-align: center; padding: 10px; margin-top: 20px; }
         .button-call { background: #28a745; display: inline-block; margin: 10px 10px 10px 0; transition: all 0.3s ease; color: white; padding: 15px 25px; text-decoration: none; font-size: 18px; border-radius: 8px; display: inline-block; margin: 10px 0; transition: background 0.3s ease; border: none; cursor: pointer; }
@@ -155,7 +161,10 @@ html {
 @media only screen and (max-width: 600px) {
     header h1 { font-size: 24px; }
     header p { font-size: 16px; }
-    nav a { display: block; margin: 8px 0; font-size: 18px; }
+    nav a {
+    display: inline-block;
+    margin: 0 15px;
+ display: block; margin: 8px 0; font-size: 18px; }
     section { margin: 10px; padding: 10px; }
     .button-call { width: 100%; font-size: 18px; padding: 15px; }
     .banner { max-height: 250px; }
@@ -261,7 +270,7 @@ html {
 
 <audio id="pop-sound" src="pop.mp3" preload="auto"></audio>
 <a href="https://m.me/lerepaire58" target="_blank" id="headset-badge" onmouseover="document.getElementById('pop-sound').play();">
-    <img src="support-icon.png" alt="Contact Messenger" />
+    <img src="headset-icon.png" alt="Contact Messenger" />
 </a>
 
 <button onclick="scrollToTop()" id="scrollTopBtn" title="Retour en haut">↑</button>
@@ -283,7 +292,7 @@ function scrollToTop() {
 
 <audio id="pop-sound" src="pop.mp3" preload="auto"></audio>
 <a href="https://m.me/lerepaire58/" target="_blank" id="headset-badge" onmouseover="document.getElementById('pop-sound').play();">
-    <img src="support-icon.png" alt="Contact Support" />
+    <img src="headset-icon.png" alt="Contact Support" />
 </a>
 
 <script>
