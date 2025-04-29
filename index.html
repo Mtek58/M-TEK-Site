@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<link rel="icon" href="favicon1.ico" type="image/x-icon">
+<script>
+let favicons = ["favicon1.ico", "favicon2.ico"];
+let index = 0;
+setInterval(() => {
+    document.querySelector("link[rel='icon']").href = favicons[index];
+    index = (index + 1) % favicons.length;
+}, 800);
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="M-Tek France : réparation téléphones, tablettes, PC, micro-soudure à Cosne-Cours-sur-Loire. Déblocage iCloud, changement écran, réparation carte mère.">
@@ -198,6 +207,39 @@ nav a:active {
     transform: scale(0.95);
     opacity: 0.8;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #f0f0f0;
+    }
+    nav {
+        background: #1f1f1f;
+    }
+    nav a {
+        color: #f0f0f0;
+    }
+    nav a:hover {
+        color: #28a745;
+        text-shadow: 0 0 5px rgba(40, 167, 69, 0.7);
+    }
+    section {
+        background: #1c1c1c;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 </style>
 </head>
 <body>
@@ -208,6 +250,7 @@ nav a:active {
 </header>
 
 <nav>
+<a href="#nous-ecrire">Nous écrire</a>
     <a href="#services">Services</a>
     <a href="#deblocage">Déblocage</a>
     <a href="#contact">Contact</a>
@@ -332,6 +375,22 @@ window.addEventListener('scroll', function() {
     } else {
         nav.classList.remove('scrolled');
     }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
 </script>
 </body>
