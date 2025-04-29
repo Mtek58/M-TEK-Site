@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mtek58.github.io/M-TEK-Site/sitemap.xml

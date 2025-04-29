@@ -45,21 +45,13 @@ nav.scrolled {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
         nav a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    transition: all 0.3s ease;
-
-    display: inline-block;
     margin: 0 15px;
- 
-    color: white; 
-    margin: 0 10px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    position: relative; 
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 nav a::after {
     content: "";
@@ -146,6 +138,7 @@ a[href*="facebook"]:hover {
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     display: none;
+    animation: bounce 2s infinite;
 }
 #scrollTopBtn:hover {
     background-color: #002860;
@@ -189,15 +182,14 @@ html {
     header h1 { font-size: 24px; }
     header p { font-size: 16px; }
     nav a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    transition: all 0.3s ease;
-
-    display: inline-block;
     margin: 0 15px;
- display: block; margin: 8px 0; font-size: 18px; }
+    transition: all 0.3s ease;
+}
     section { margin: 10px; padding: 10px; }
     .button-call { width: 100%; font-size: 18px; padding: 15px; }
     .banner { max-height: 250px; }
@@ -217,8 +209,14 @@ nav a:active {
         background: #1f1f1f;
     }
     nav a {
-        color: #f0f0f0;
-    }
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+}
     nav a:hover {
         color: #28a745;
         text-shadow: 0 0 5px rgba(40, 167, 69, 0.7);
@@ -250,9 +248,9 @@ section.visible {
 </header>
 
 <nav>
-<a href="#services">Services</a>
+    <a href="#services">Services</a>
     <a href="#deblocage">Déblocage</a>
-    <a href="#contact">Contact</a>
+    <a href="#nous-ecrire">Nous écrire</a>
     <a href="#formulaire">Nous Écrire</a>
     <a href="#cgu">CGU</a>
     <a href="#mentions">Mentions légales</a>
@@ -339,10 +337,7 @@ section.visible {
 </footer>
 
 
-<audio id="pop-sound" src="pop.mp3" preload="auto"></audio>
-<a href="https://m.me/lerepaire58" target="_blank" id="headset-badge" onmouseover="document.getElementById('pop-sound').play();">
-    <img src="headset-icon.png" alt="Contact Messenger" />
-</a>
+
 
 <button onclick="scrollToTop()" id="scrollTopBtn" title="Retour en haut">↑</button>
 
@@ -361,10 +356,7 @@ function scrollToTop() {
 }
 </script>
 
-<audio id="pop-sound" src="pop.mp3" preload="auto"></audio>
-<a href="https://m.me/lerepaire58/" target="_blank" id="headset-badge" onmouseover="document.getElementById('pop-sound').play();">
-    <img src="headset-icon.png" alt="Contact Support" />
-</a>
+
 
 <script>
 window.addEventListener('scroll', function() {
