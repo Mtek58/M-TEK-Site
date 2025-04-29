@@ -248,6 +248,7 @@ section.visible {
 </header>
 
 <nav>
+<a href="#contact-boutons">Contact</a>
     <a href="#services">Services</a>
     <a href="#deblocage">Déblocage</a>
     <a href="#nous-ecrire">Nous écrire</a>
@@ -382,6 +383,19 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         observer.observe(section);
     });
+});
+</script>
+
+<audio id="pop-sound" src="pop.mp3" preload="auto"></audio>
+<a href="https://m.me/lerepaire58/" target="_blank" id="support-badge">
+    <img src="support-icon.png" alt="Support" width="60" height="60">
+</a>
+
+<script>
+const badge = document.getElementById('support-badge');
+const popSound = document.getElementById('pop-sound');
+badge.addEventListener('click', () => {
+    popSound.play();
 });
 </script>
 </body>
