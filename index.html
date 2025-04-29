@@ -11,18 +11,63 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
         header { background-color: #004080; color: white; padding: 20px; text-align: center; }
-        nav { background: #003366; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+        nav { 
+    position: sticky; 
+    top: 0; 
+    background: #003366; 
+    padding: 10px; 
+    text-align: center; 
+    transition: background 0.5s ease; 
+}
+nav.scrolled { 
+    background: rgba(0, 51, 102, 0.9); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+        nav a { 
+    color: white; 
+    margin: 0 10px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    position: relative; 
+    transition: color 0.3s ease;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    background: #28a745;
+    transition: width 0.4s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
         nav a:hover { color: #28a745; }
         section { padding: 20px; background: white; margin: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         footer { background-color: #004080; color: white; text-align: center; padding: 10px; margin-top: 20px; }
-        .button-call { background: #28a745; color: white; padding: 15px 25px; text-decoration: none; font-size: 18px; border-radius: 8px; display: inline-block; margin: 10px 0; transition: background 0.3s ease; border: none; cursor: pointer; }
-        .button-call:hover { background: #218838; }
-        .banner { width: 100%; max-height: 500px; object-fit: cover; margin-bottom: 20px; border-radius: 8px; }
+        .button-call { background: #28a745; display: inline-block; margin: 10px 10px 10px 0; transition: all 0.3s ease; color: white; padding: 15px 25px; text-decoration: none; font-size: 18px; border-radius: 8px; display: inline-block; margin: 10px 0; transition: background 0.3s ease; border: none; cursor: pointer; }
+        .button-call:hover {
+    background: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.7);
+}
+        .banner {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    animation: fadeIn 2s ease-in-out;
+}
         iframe { width: 100%; height: 300px; border: none; margin-top: 20px; border-radius: 8px; }
         form input, form textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; }
     
-#messenger-badge {
+#headset-badge {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -46,12 +91,72 @@
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
+a[href*="facebook"]:hover {
+    background: #006bbf;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0, 132, 255, 0.7);
+}
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 1000;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: #004080;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: none;
+}
+#scrollTopBtn:hover {
+    background-color: #002860;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+#scrollTopBtn {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 1000;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: #004080;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: none;
+    animation: bounce 2s infinite;
+}
+#scrollTopBtn:hover {
+    background-color: #002860;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+html {
+    scroll-behavior: smooth;
+}
 </style>
 </head>
 <body>
 
 <header>
-    <h1>M-Tek ® France - Réparation électronique</h1>
+    <h1>M-Tek ® France "Réparation électronique"</h1>
     <p>Déblocage iCloud - Changement d'écran - Réparation carte mère</p>
 </header>
 
@@ -107,7 +212,8 @@
         58200 Cosne-Cours-sur-Loire<br>
         Téléphone : 07 43 35 68 24
     </p>
-    <a href="tel:+33743356824" class="button-call">Nous Appeler</a>
+    <a href="tel:+33743356824" class="button-call">Appeler M-Tek ® France</a>
+<a href="https://m.facebook.com/lerepaire58/" class="button-call" target="_blank">Facebook</a>
 
     <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2668.539175880099!2d3.1203776769422397!3d47.41047350177137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f03c90e99e7a6b%3A0xfad2c1d84b249bd0!2s68%20Rue%20du%20Mar%C3%A9chal%20Leclerc%2C%2058200%20Cosne-Cours-sur-Loire!5e0!3m2!1sfr!2sfr!4v1714327770621!5m2!1sfr!2sfr" 
@@ -148,8 +254,42 @@
 </footer>
 
 
-<a href="https://m.me/lerepaire58" target="_blank" id="messenger-badge">
-    <img src="messenger-icon.png" alt="Contact Messenger" />
+<audio id="pop-sound" src="pop.mp3" preload="auto"></audio>
+<a href="https://m.me/lerepaire58" target="_blank" id="headset-badge" onmouseover="document.getElementById('pop-sound').play();">
+    <img src="headset-icon.png" alt="Contact Messenger" />
 </a>
+
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Retour en haut">↑</button>
+
+<script>
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    var btn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+}
+function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+<audio id="pop-sound" src="pop.mp3" preload="auto"></audio>
+<a href="https://m.me/lerepaire58/" target="_blank" id="headset-badge" onmouseover="document.getElementById('pop-sound').play();">
+    <img src="headset-icon.png" alt="Contact Support" />
+</a>
+
+<script>
+window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+</script>
 </body>
 </html>
